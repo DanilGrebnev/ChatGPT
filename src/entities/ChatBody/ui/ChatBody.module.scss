@@ -1,3 +1,9 @@
 .ChatBody {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     background: var(--chat-bg-color);
+    padding: 0 48px;
+    overflow: auto;
 }

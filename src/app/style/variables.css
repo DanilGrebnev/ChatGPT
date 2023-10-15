@@ -1,16 +1,30 @@
 :root {
-    /* color */
     --header-chat-color: #ffffff;
     --chat-bg-color: #e7e7e7;
-    --response-message-color: #ffffff;
-    --request-message-color: #00a3ff;
     --form-bg: #ffffff;
+    --chat-item-response-bg: #ffffff;
+    --chat-item-request-bg: #00a3ff;
+
+    /* font-color */
+    --primary-font-color: #515151;
+    --chat-item-message-name-font-color: var(--primary-font-color);
+    --chat-item-response-font-color: black;
+    --chat-item-request-font-color: #ffffff;
+
+    /* font-size */
+    --chat-item-message-font-size: 18px;
+    --chat-item-message-name-font-size: 16px;
 }
 
 .App.black {
     --header-chat-color: #121212;
     --chat-bg-color: #3f3f3f;
-    --response-message-color: #292929;
-    --request-message-color: #00a3ff;
     --form-bg: #121212;
+    --chat-item-response-bg: #292929;
+    --chat-item-request-bg: #00a3ff;
+
+    /* font-color */
+    --primary-font-color: #f0f0f0;
+    --chat-item-response-font-color: #ffffff;
+    --chat-item-request-font-color: black;
 }

@@ -3,6 +3,16 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 48px;
-    height: 90px;
+    min-height: 90px;
+    height: max-content;
     border-top: 1px solid #dfdfdf;
+}
+
+.inputField {
+    outline: none;
+    border: none;
+    font-size: 24px;
+    flex-grow: 1;
+    height: min-content;
+    resize: none;
 }
