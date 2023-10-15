@@ -1,1 +1,1 @@
-export { SwitchThemeBtn } from './ui/ThemeToggler'
+export { ThemeToggler } from './ui/ThemeToggler'
