@@ -7,8 +7,8 @@ interface IChatInputProps {
 }
 
 export const ChatInput: FC<IChatInputProps> = () => {
-    const [state, setState] = useState()
-    const resizeTextArea = (e) => {}
+    // const [state, setState] = useState()
+    // const resizeTextArea = (e) => {}
 
     return (
         <form

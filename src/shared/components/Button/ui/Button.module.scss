@@ -9,3 +9,8 @@
     border-radius: 12px;
     padding: 10px 18px;
 }
+
+.Button:focus,
+.Button:hover {
+    box-shadow: 0px 0px 7px 5px rgba(0, 163, 255, 0.15);
+}

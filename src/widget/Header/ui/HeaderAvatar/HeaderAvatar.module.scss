@@ -5,15 +5,16 @@ $status-color: #00a3ff;
     gap: 18px;
 
     align-items: center;
-
     img {
         width: 100%;
+        border: 1px solid var(--border-color);
         border-radius: 50%;
     }
 }
 
 .name {
     font-size: 20px;
+    color: var(--primary-font-color);
 }
 
 .status {
