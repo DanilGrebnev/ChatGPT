@@ -1,0 +1,13 @@
+$neonShadow: 0px 0px 8px 8px rgba(146, 26, 174, 0.1);
+
+.App {
+    width: 100vw;
+    height: 100dvh;
+    font-family: roboto;
+}
+
+.App__window {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}

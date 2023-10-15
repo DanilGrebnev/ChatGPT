@@ -1,0 +1,16 @@
+:root {
+    /* color */
+    --header-chat-color: #ffffff;
+    --chat-bg-color: #e7e7e7;
+    --response-message-color: #ffffff;
+    --request-message-color: #00a3ff;
+    --form-bg: #ffffff;
+}
+
+.App.black {
+    --header-chat-color: #121212;
+    --chat-bg-color: #3f3f3f;
+    --response-message-color: #292929;
+    --request-message-color: #00a3ff;
+    --form-bg: #121212;
+}
