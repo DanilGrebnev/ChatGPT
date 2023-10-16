@@ -6,7 +6,7 @@ export class ChatBodySelectors {
     }
 
     static getError(state: IStateSchema) {
-        return state.chatBody.messages
+        return state.chatBody.error
     }
 
     static getIsLoading(state: IStateSchema) {

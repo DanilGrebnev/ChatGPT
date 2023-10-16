@@ -20,6 +20,9 @@
     /* font-size */
     --chat-item-message-font-size: 18px;
     --chat-item-message-name-font-size: 16px;
+
+    /* padding */
+    --primary-padding: 0 48px;
 }
 
 .App.Dark {
@@ -37,4 +40,10 @@
     --chat-item-request-font-color: #ffffff;
     --chat-item-markdown-background: rgba(0, 0, 0, 0.1);
     --chat-item-markdown-color: green;
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --primary-padding: 0 10px;
+    }
 }

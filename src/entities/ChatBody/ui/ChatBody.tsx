@@ -12,6 +12,7 @@ interface IChatBodyProps {
 export const ChatBody: FC<IChatBodyProps> = () => {
     const messages = useAppSelector(ChatBodySelectors.getMessage)
     const isLoading = useAppSelector(ChatBodySelectors.getIsLoading)
+    const isError = useAppSelector(ChatBodySelectors.getError)
 
     return (
         <main className={s.ChatBody}>
@@ -24,6 +25,7 @@ export const ChatBody: FC<IChatBodyProps> = () => {
                 )
             })}
             {isLoading && <ChatItem loader />}
+            {isError && <ChatItem error={isError} />}
         </main>
     )
 }

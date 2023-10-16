@@ -10,26 +10,35 @@ interface IChatItemProps {
     data?: IMessageSchema
     children?: ReactNode
     loader?: boolean
+    error?: string
 }
 
 export const ChatItem: FC<IChatItemProps> = memo((props) => {
-    const { data, loader } = props
+    const { data, loader, error } = props
 
     const isResponse = data?.answer
 
-    const icon = isResponse || loader ? gpt_icon : user_icon
-    const chatItemName = isResponse || loader ? 'ChatGPT 3.5' : 'You'
+    const icon = isResponse || loader || error ? gpt_icon : user_icon
+    const chatItemName = isResponse || loader || error ? 'ChatGPT 3.5' : 'You'
 
     const content = data?.answer ? (
         <ReactMarkdown>{data?.answer}</ReactMarkdown>
     ) : loader ? (
         'Печатает...'
+    ) : error ? (
+        error
     ) : (
         data?.text
     )
 
     return (
-        <div className={cn(s.ChatItem, { [s.response]: isResponse || loader })}>
+        <div
+            className={cn(
+                s.ChatItem,
+                { [s.response]: isResponse || loader || error },
+                { [s.error]: error }
+            )}
+        >
             <img
                 src={icon}
                 loading='lazy'

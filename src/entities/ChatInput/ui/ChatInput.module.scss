@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 48px;
+    padding: var(--primary-padding);
     min-height: 90px;
     height: max-content;
     border-top: 1px solid var(--border-color);
