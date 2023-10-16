@@ -6,7 +6,16 @@
     font-family: roboto;
 }
 
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: local('JetBrainsMono'), url('../../shared/fonts/JetBrainsMono/JetBrainsMono-Medium.woff2');
+}
+
 button,
 a {
     cursor: pointer;
+}
+
+ol {
+    display: block;
 }

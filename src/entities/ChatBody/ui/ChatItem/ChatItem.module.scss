@@ -39,11 +39,22 @@
     }
 
     pre {
+        max-width: 100%;
         margin: 20px 0;
         border-radius: 15px;
         background: var(--chat-item-markdown-background);
         color: var(--chat-item-markdown-color);
         padding: 20px;
+        word-wrap: break-word;
+    }
+
+    code {
+        max-width: 100%;
+        font-family: 'JetBrainsMono';
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-all;
     }
 }
 

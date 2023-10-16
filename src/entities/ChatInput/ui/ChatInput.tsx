@@ -25,6 +25,7 @@ export const ChatInput: FC<IChatInputProps> = () => {
         const data = { text: state }
         dispatch(fetchChatBodyData(data))
         dispatch(chatBodyActions.setRequestMessage(data))
+        setState('')
     }, [dispatch, state])
 
     return (
