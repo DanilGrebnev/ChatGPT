@@ -14,6 +14,8 @@
     --chat-item-message-name-font-color: var(--primary-font-color);
     --chat-item-response-font-color: black;
     --chat-item-request-font-color: #ffffff;
+    --chat-item-markdown-background: rgba(0, 0, 0, 1);
+    --chat-item-markdown-color: green;
 
     /* font-size */
     --chat-item-message-font-size: 18px;
@@ -33,4 +35,6 @@
     --chat-item-message-name-font-color: #ffffff;
     --chat-item-response-font-color: #ffffff;
     --chat-item-request-font-color: #ffffff;
+    --chat-item-markdown-background: rgba(0, 0, 0, 0.1);
+    --chat-item-markdown-color: green;
 }

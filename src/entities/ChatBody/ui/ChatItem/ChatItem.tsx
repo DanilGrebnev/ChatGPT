@@ -1,46 +1,42 @@
-import { FC, memo } from 'react'
+import { FC, ReactNode, memo } from 'react'
 import s from './ChatItem.module.scss'
 import cn from 'classnames'
 import gpt_icon from '@/shared/assets/gpt_icon.webp'
 import user_icon from '@/shared/assets/gigachad.webp'
+import { IMessageSchema } from '../../model/schema/chatBodySchema'
+import ReactMarkdown from 'react-markdown'
 
 interface IChatItemProps {
-    response?: boolean
-    content?: string
+    data?: IMessageSchema
+    children?: ReactNode
+    loader?: boolean
 }
 
 export const ChatItem: FC<IChatItemProps> = memo((props) => {
-    const { response } = props
+    const { data, loader } = props
 
-    const icon = response ? gpt_icon : user_icon
-    const chatItemName = response ? 'ChatGPT 3.5' : 'You'
-    const className = { [s.response]: response }
+    const isResponse = data?.answer
+
+    const icon = isResponse || loader ? gpt_icon : user_icon
+    const chatItemName = isResponse || loader ? 'ChatGPT 3.5' : 'You'
+
+    const content = data?.answer ? (
+        <ReactMarkdown>{data?.answer}</ReactMarkdown>
+    ) : loader ? (
+        'Печатает...'
+    ) : (
+        data?.text
+    )
 
     return (
-        <div className={cn(s.ChatItem, className)}>
+        <div className={cn(s.ChatItem, { [s.response]: isResponse || loader })}>
             <img
                 src={icon}
                 loading='lazy'
             />
             <div className={s.messageContent}>
                 <p className={s.chatItemName}>{chatItemName}</p>
-                <div className={cn(s.message)}>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, sint odio
-                    veritatis eius aspernatur modi ad eaque, sequi perferendis voluptatum eveniet,
-                    at repudiandae nesciunt natus fugit ab hic eligendi ratione? Delectus aut ab
-                    autem officiis a molestias atque, modi numquam quis accusantium tempora quaerat
-                    fugiat optio magni, ipsum nobis perferendis nisi nulla culpa cum libero ipsam
-                    voluptate? Amet, aspernatur deserunt. Optio itaque omnis ipsam nisi repellendus
-                    quam voluptatem asperiores laudantium, odit ad a mollitia eos numquam sunt
-                    maiores atque? Aut eaque voluptas consequuntur non aliquid velit dicta,
-                    voluptatem odio sit? Consectetur amet odio inventore, quae maxime qui
-                    perferendis adipisci sunt. Eum dicta cupiditate hic vero veniam illum, vitae
-                    quidem odit commodi, quasi error asperiores! Inventore nisi explicabo
-                    necessitatibus assumenda hic? Error necessitatibus explicabo sint inventore
-                    dolore hic labore exercitationem voluptatum velit eius quasi sapiente deleniti
-                    natus dicta, consequatur dolores rerum beatae quod quibusdam. Distinctio quia
-                    odit quod sed velit error.
-                </div>
+                <div className={cn(s.message)}>{content}</div>
             </div>
         </div>
     )

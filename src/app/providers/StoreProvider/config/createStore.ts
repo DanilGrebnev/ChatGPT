@@ -1,13 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { rootReducer as reducer } from './rootReducer'
+import { rootReducer } from './rootReducer'
+import { IStateSchema } from './reducerSchema'
 
 export const createStore = () => {
-  const store = configureStore({
-    reducer,
-  })
+    const store = configureStore<IStateSchema>({
+        reducer: rootReducer,
+    })
 
-  return store
+    return store
 }
 
 export type RootState = ReturnType<ReturnType<typeof createStore>['getState']>
-export type AppDispatch = ReturnType<ReturnType<typeof createStore>['dispatch']>
+export type AppDispatch = ReturnType<typeof createStore>['dispatch']

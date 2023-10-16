@@ -37,6 +37,14 @@
         font-weight: 600;
         color: var(--chat-item-message-name-font-color);
     }
+
+    pre {
+        margin: 20px 0;
+        border-radius: 15px;
+        background: var(--chat-item-markdown-background);
+        color: var(--chat-item-markdown-color);
+        padding: 20px;
+    }
 }
 
 .ChatItem.response {
