@@ -6,6 +6,7 @@ import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { chatBodyActions } from '@/entities/ChatBody'
 import { useAppSelector } from '@/shared/hooks/useAppSelector'
 import { ChatBodySelectors } from '@/entities/ChatBody'
+import { TextArea } from '@/shared/components/TextArea'
 
 interface IChatInputProps {
     className?: string
@@ -35,13 +36,12 @@ export const ChatInput: FC<IChatInputProps> = () => {
             }}
             className={s.ChatInput}
         >
-            <textarea
+            <TextArea
                 value={state}
                 onChange={onChange}
-                rows={1}
                 className={s.inputField}
-                placeholder='Ask you question'
-            ></textarea>
+                placeholder="Ask you question"
+            ></TextArea>
             <Button
                 disabled={isLoading}
                 onClick={fetchData}

@@ -2,7 +2,7 @@
     "arrowParens": "always",
     "semi": false,
     "bracketSameLine": false,
-    "jsxSingleQuote": true,
+    "jsxSingleQuote": false,
     "singleAttributePerLine": true,
     "singleQuote": true,
     "tabWidth": 4,
